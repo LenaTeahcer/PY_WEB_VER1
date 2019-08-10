@@ -18,7 +18,7 @@ from django.contrib import admin
 from mysite.views import IndexView
 
 from bookmark.views import BookmarkLV, BookmarkDV
-from blog.views import PostLV
+from blog.views import PostLV, PostDV
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -32,6 +32,9 @@ urlpatterns = [
     url(r'^bookmark/(?P<pk>\d+)/$',
         BookmarkDV.as_view(),
         name='detail'),
+    url(r'^blog/(?P<pk>\d+)/$',
+        PostDV.as_view(),
+        name='blog_detail'),
 
     url(r'^blog/$', PostLV.as_view(),
         name='blog_index'),
