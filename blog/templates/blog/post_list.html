@@ -60,7 +60,7 @@
     <div class="box">
         <p class="box_title">{{ post.title }}</p>
         <div class="imgBox">
-            <img src="{{ post.image.url }}">
+            <a href="{% url 'blog_detail' post.id %}"> <img src="{{ post.image.url }}"> </a>
         </div>
 
         <p class="description"><span class="label">Description:</span> {{ post.description }}</p>
